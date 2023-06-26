@@ -1,0 +1,17 @@
+<p>By country-page</p>
+
+<div class="row">
+    <div class="col">
+        <shared-search-box
+        (onValue)="searchByName($event)"
+        placeholder="Search by full name"></shared-search-box>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <hr />
+        <countries-table 
+        [countries]="countries"
+        alertPlaceHolder="Full name"></countries-table>
+    </div>
+</div>
