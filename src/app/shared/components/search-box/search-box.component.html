@@ -1,5 +1,8 @@
+<!-- (keyup.enter)="txtInput(txtInputSB.value)" -->
 <input type="text" 
        [placeholder]="placeholder | titlecase"
        class="form-control"
        #txtInputSB
-       (keyup.enter)="txtInput(txtInputSB.value)">
+       (keyup)="onKeyPress(txtInputSB.value)"
+       [value]="initialValue ? initialValue : ''"
+       >

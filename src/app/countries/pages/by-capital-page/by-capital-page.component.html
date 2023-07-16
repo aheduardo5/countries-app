@@ -3,9 +3,11 @@
 <div class="row">
   <div class="col">
     <!-- searchbox -->
+    <!-- (onValue)="searchByCapital($event)" -->
     <shared-search-box
-      (onValue)="searchByCapital($event)"
+    (onDebounce)="searchByCapital($event)"
       placeholder="Search by capital"
+      [initialValue]="initialValue"
     ></shared-search-box>
   </div>
 </div>
@@ -13,6 +15,7 @@
   <div class="col">
     <!-- result table -->
     <hr />
+    <app-loader *ngIf="isLoading"></app-loader>
     <countries-table
     [countries]="countries"
     alertPlaceHolder="Capital"></countries-table>
