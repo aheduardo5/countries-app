@@ -3,13 +3,15 @@
 <div class="row">
     <div class="col">
         <shared-search-box
-        (onValue)="searchByName($event)"
-        placeholder="Search by full name"></shared-search-box>
+        (onDebounce)="searchByName($event)"
+        placeholder="Search by full name"
+        [initialValue]="initialValue"></shared-search-box>
     </div>
 </div>
 <div class="row">
     <div class="col">
         <hr />
+        <app-loader *ngIf="isLoading"></app-loader>
         <countries-table 
         [countries]="countries"
         alertPlaceHolder="Full name"></countries-table>
